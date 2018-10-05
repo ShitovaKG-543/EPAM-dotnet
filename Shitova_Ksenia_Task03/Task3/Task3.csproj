@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFBAA94A-0B88-42C5-B973-D84599937BF2}</ProjectGuid>
+    <ProjectGuid>{3CE899C9-4442-494C-9296-DF0478936C9C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task1</RootNamespace>
-    <AssemblyName>Task1</AssemblyName>
+    <RootNamespace>Task3</RootNamespace>
+    <AssemblyName>Task3</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WorkWithArray\WorkWithArray.csproj">
-      <Project>{5437BE50-F7EF-48F7-9C32-E9E17C35BBA3}</Project>
+      <Project>{5437be50-f7ef-48f7-9c32-e9e17c35bba3}</Project>
       <Name>WorkWithArray</Name>
     </ProjectReference>
   </ItemGroup>
