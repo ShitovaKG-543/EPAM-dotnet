@@ -5,9 +5,10 @@ namespace Task1
 {
     class Program
     {
+        public static Random rand = new Random();
         static void Main(string[] args)
         {
-            int[] array = WorkWithArray.WorkWithArray.GetArrayWithRandomValue(20, -100, 100);
+            int[] array = WorkWithArray.WorkWithArray.GetArrayWithRandomValue(rand, 20, -100, 100);
 
             StringBuilder resultString = new StringBuilder();
             resultString.Append($"Initial array: \r\n{WorkWithArray.WorkWithArray.ToString(array)} \r\n");

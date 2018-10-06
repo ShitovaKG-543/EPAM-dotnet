@@ -5,9 +5,8 @@ namespace WorkWithArray
 {
     public static class WorkWithArray
     {
-        public static int[] GetArrayWithRandomValue(int numberElements, int minValue, int maxValue)
+        public static int[] GetArrayWithRandomValue(Random rand, int numberElements, int minValue, int maxValue)
         {
-            Random rand = new Random();
             int[] array = new int[numberElements];
             for (int i = 0; i < array.Length; i++)
             {
@@ -65,7 +64,7 @@ namespace WorkWithArray
             StringBuilder result = new StringBuilder();
             foreach (int elArray in array)
             {
-                result.Append($"{elArray} ");
+                result.Append($"{elArray, 4} ");
             }
             return result.ToString();
         }
