@@ -18,6 +18,8 @@ namespace Task3
         public static string GetLocaleDifferences(CultureInfo culture1, CultureInfo culture2)
         {
             string result = String.Empty;
+            DateTime date = new DateTime(2018, 10, 9, 13, 24, 10);
+            result += $"Date: in {culture1}: \"{ date.ToString(culture1)}\"; in {culture2}: \"{ date.ToString(culture2)}\"\r\n";
             result += $"Date separator: in {culture1}: \"{culture1.DateTimeFormat.DateSeparator}\"; in {culture2}: \"{culture2.DateTimeFormat.DateSeparator}\"\r\n";
             result += $"Time separator: in {culture1}: \"{culture1.DateTimeFormat.TimeSeparator}\"; in {culture2}: \"{culture2.DateTimeFormat.TimeSeparator}\"\r\n";
             result += $"Full date time pattern:\r\n in {culture1}: \"{culture1.DateTimeFormat.FullDateTimePattern}\";\r\n in {culture2}: \"{culture2.DateTimeFormat.FullDateTimePattern}\"\r\n";
