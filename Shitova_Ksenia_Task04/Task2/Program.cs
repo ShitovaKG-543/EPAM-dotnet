@@ -36,14 +36,15 @@ namespace Task2
         {
             for (int i = 0; i < string2.Length; i++)
             {
-                for (int j = 0; j < string1.Length; j++)
-                {
-                    if (string1[j].Equals(string2[i]))
-                    {
-                        string1 = string1.Insert(j + 1, string2[i].ToString());
-                        j++;
-                    }
-                }
+                string1 = string1.Replace(string2[i].ToString(), new string(string2[i], 2));
+                //for (int j = 0; j < string1.Length; j++)
+                //{
+                //    if (string1[j].Equals(string2[i]))
+                //    {
+                //        string1 = string1.Insert(j + 1, string2[i].ToString());
+                //        j++;
+                //    }
+                //}
             }
         }
 

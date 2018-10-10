@@ -9,7 +9,7 @@ namespace Task7
         {
             Console.Write("Enter text: ");
             string text = Console.ReadLine();
-            Regex timePattern = new Regex(@"\b((1?\d)|(2[0-3]))\:[0-5]\d\b");
+            Regex timePattern = new Regex(@"\b(([01]?\d)|(2[0-3]))\:[0-5]\d\b");
             Console.WriteLine($"Time in the text contains { timePattern.Matches(text).Count} times");
             Console.ReadLine();
         }

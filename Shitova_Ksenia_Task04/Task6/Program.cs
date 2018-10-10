@@ -7,8 +7,8 @@ namespace Task6
     {
         static void Main(string[] args)
         {
-            Regex numberInNormalNotationPattern = new Regex(@"^[-+]?\d+\.?\d*$");
-            Regex numberInScientificNotationPattern = new Regex(@"^[-+]?\d\.?\d*e-?\d+$");
+            Regex numberInNormalNotationPattern = new Regex(@"^[-+]?\d+(\.\d+)?$");
+            Regex numberInScientificNotationPattern = new Regex(@"^[-+]?\d\.\d+e-?\d+$");
 
             Console.Write("Enter number: ");
             string htmlText = Console.ReadLine().Trim();
