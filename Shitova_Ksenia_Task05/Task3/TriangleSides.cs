@@ -65,5 +65,10 @@ namespace Task3
             B = b;
             C = c;
         }
+
+        public override string ToString()
+        {
+            return $"A = {A}, B = {B}, C = {C}";
+        }
     }
 }

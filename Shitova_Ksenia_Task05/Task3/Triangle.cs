@@ -25,6 +25,11 @@ namespace Task3
             }
         }
 
+        public Triangle(TriangleSides triangleSides)
+        {
+            Sides = triangleSides;
+        }
+
         public double GetTrianglePerimeter()
         {
             return Sides.A + Sides.B + Sides.C;
@@ -37,5 +42,9 @@ namespace Task3
             return square;
         }
 
+        public override string ToString()
+        {
+            return Sides.ToString();
+        }
     }
 }

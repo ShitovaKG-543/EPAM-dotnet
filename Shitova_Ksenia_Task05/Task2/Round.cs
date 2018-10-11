@@ -73,7 +73,12 @@ namespace Task2
 
         public double GetRoundSquare()
         {
-            return Math.Pow(Math.PI * Radius, 2);
+            return Math.PI * Math.Pow(Radius, 2);
+        }
+
+        public override string ToString()
+        {
+            return $"X = {X}, Y = {Y}, Radius = {Radius}";
         }
     }
 }

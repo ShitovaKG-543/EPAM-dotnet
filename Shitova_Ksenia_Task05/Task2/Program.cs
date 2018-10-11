@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2
 {
@@ -10,6 +7,20 @@ namespace Task2
     {
         static void Main(string[] args)
         {
+            StringBuilder result = new StringBuilder();
+            try
+            {
+                Round round = new Round(12, 32, 6);
+                result.Append($"{round}\r\n");
+                result.Append(string.Format("Round length: {0:0.##}\r\n", round.GetRoundLength()));
+                result.Append(string.Format("Round square: {0:0.##}\r\n", round.GetRoundSquare()));
+                Console.WriteLine(result);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.ReadLine();
         }
     }
 }
