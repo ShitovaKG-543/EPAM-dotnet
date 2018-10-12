@@ -2,49 +2,90 @@
 
 namespace Task3
 {
-    class Triangle
+    public class Triangle
     {
-        private TriangleSides _sides;
+        private double _a;
+        private double _b;
+        private double _c;
 
-        public TriangleSides Sides
+        public double A
         {
             get
             {
-                return _sides;
+                return _a;
             }
+
             set
             {
-                if (value.A + value.B > value.C && value.A + value.C > value.B && value.C + value.B > value.A)
+                if (value <= 0)
                 {
-                    _sides = value;
+                    throw new ArgumentException($"{nameof(A)} cannot be less than zero or equal to zero");
                 }
-                else
-                {
-                    throw new ArgumentException($"{nameof(Sides)} cannot contain sides, the sum of two of which is less than the third");
-                }
+                _a = value;
             }
         }
 
-        public Triangle(TriangleSides triangleSides)
+        public double B
         {
-            Sides = triangleSides;
+            get
+            {
+                return _b;
+            }
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException($"{nameof(B)} cannot be less than zero or equal to zero");
+                }
+                _b = value;
+            }
+        }
+
+        public double C
+        {
+            get
+            {
+                return _c;
+            }
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException($"{nameof(C)} cannot be less than zero or equal to zero");
+                }
+                _c = value;
+            }
+        }
+
+        public Triangle(double a, double b, double c)
+        {
+            if (a + b > c && a + c > b && c + b > a)
+            {
+                ;
+            }
+            else
+            {
+                throw new ArgumentException($"Triangle cannot contain sides, the sum of two of which is less than the third");
+            }
         }
 
         public double GetTrianglePerimeter()
         {
-            return Sides.A + Sides.B + Sides.C;
+            return A + B + C;
         }
 
         public double GetTriangleSquare()
         {
             double halfPerimeter = GetTrianglePerimeter() / 2;
-            double square = Math.Sqrt(halfPerimeter * (halfPerimeter - Sides.A) * (halfPerimeter - Sides.B) * (halfPerimeter - Sides.C));
+            double square = Math.Sqrt(halfPerimeter * (halfPerimeter - A) * (halfPerimeter - B) * (halfPerimeter - C));
             return square;
         }
 
         public override string ToString()
         {
-            return Sides.ToString();
+            return $"A = {A}, B = {B}, C = {C}";
         }
     }
 }

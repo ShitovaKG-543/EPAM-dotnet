@@ -2,7 +2,7 @@
 
 namespace Task2
 {
-    class Round
+    public class Round
     {
         private double _x;
         private double _y;
@@ -66,14 +66,14 @@ namespace Task2
             Radius = radius;
         }
 
-        public double GetRoundLength()
+        public double RoundLength
         {
-            return 2 * Math.PI * Radius;
+            get { return 2 * Math.PI * Radius; }
         }
 
-        public double GetRoundSquare()
+        public double RoundSquare
         {
-            return Math.PI * Math.Pow(Radius, 2);
+            get { return Math.PI * Math.Pow(Radius, 2); }
         }
 
         public override string ToString()

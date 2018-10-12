@@ -2,14 +2,13 @@
 
 namespace Task1
 {
-    class User
+    public class User
     {
         private string _surname;
         private string _name;
         private string _middleName;
         private DateTime _birthDate;
-        private int _age;
-
+        
         public string Surname
         {
             get
@@ -18,7 +17,7 @@ namespace Task1
             }
             set
             {
-                if (value == null)
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException($"{nameof(Surname)} cannot be null");
                 }
@@ -34,14 +33,14 @@ namespace Task1
             }
             set
             {
-                if (value == null)
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException($"{nameof(Name)} cannot be null");
                 }
                 _name = value;
             }
         }
-
+        
         public string MiddleName
         {
             get
@@ -63,7 +62,7 @@ namespace Task1
 
             set
             {
-                if (value == null || !(value > new DateTime(1950, 1, 1) && value < DateTime.Now))
+                if (value == null || value < new DateTime(1950, 1, 1) && value > DateTime.Now))
                 {
                     throw new ArgumentException($"{nameof(BirthDate)} cannot be null or less than {new DateTime(1950, 1, 1)} and more than {DateTime.Now}");
                 }
@@ -75,21 +74,18 @@ namespace Task1
         {
             get
             {
-                return _age;
-            }
 
-            set
-            {
                 DateTime dateNow = DateTime.Now;
                 int age = dateNow.Year - BirthDate.Year;
-                if ((BirthDate.Month > dateNow.Month) || (BirthDate.Month == dateNow.Month && BirthDate.Day < dateNow.Day))
+                if ((BirthDate.Month > dateNow.Month) || (BirthDate.Month == dateNow.Month && BirthDate.Day > dateNow.Day))
                 {
-                    _age = age - 1;
+                    return age - 1;
                 }
                 else
                 {
-                    _age = age;
+                    return age;
                 }
+
             }
         }
 
@@ -99,7 +95,6 @@ namespace Task1
             Name = name;
             MiddleName = middleName;
             BirthDate = birthDate;
-            Age = 0;
         }
 
         public override string ToString()

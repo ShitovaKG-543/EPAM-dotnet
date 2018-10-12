@@ -12,8 +12,8 @@ namespace Task2
             {
                 Round round = new Round(12, 32, 6);
                 result.Append($"{round}\r\n");
-                result.Append(string.Format("Round length: {0:0.##}\r\n", round.GetRoundLength()));
-                result.Append(string.Format("Round square: {0:0.##}\r\n", round.GetRoundSquare()));
+                result.Append(string.Format("Round length: {0:0.##}\r\n", round.RoundLength));
+                result.Append(string.Format("Round square: {0:0.##}\r\n", round.RoundSquare));
                 Console.WriteLine(result);
             }
             catch (ArgumentException e)

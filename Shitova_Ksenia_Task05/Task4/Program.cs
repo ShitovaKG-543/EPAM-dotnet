@@ -13,7 +13,7 @@ namespace Task4
                 MyString firstString = new MyString(Console.ReadLine().Trim().ToCharArray());
                 Console.WriteLine("Enter second string:");
                 MyString secondString = new MyString(Console.ReadLine().Trim().ToCharArray());
-
+                var a = secondString[0];
                 StringBuilder stringResult = new StringBuilder();
 
                 stringResult.Append($"{firstString} + {secondString}: {firstString + secondString}\r\n");

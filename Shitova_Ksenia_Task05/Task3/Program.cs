@@ -10,7 +10,7 @@ namespace Task3
             StringBuilder result = new StringBuilder();
             try
             {
-                Triangle triangle = new Triangle(new TriangleSides(12, 7, 8));
+                Triangle triangle = new Triangle(12, 7, 8);
                 result.Append($"{triangle}\r\n");
                 result.Append(string.Format("Triangle perimeter: {0:0.##}\r\n", triangle.GetTrianglePerimeter()));
                 result.Append(string.Format("Triangle square: {0:0.##}\r\n", triangle.GetTriangleSquare()));

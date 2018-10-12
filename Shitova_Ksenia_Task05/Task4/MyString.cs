@@ -3,11 +3,19 @@ using System.Text;
 
 namespace Task4
 {
-    class MyString
+    public class MyString
     {
         private char[] _chars;
 
-        public char[] Chars
+        public char this[int n] {
+            get { return Chars[n]; }
+            set
+            {
+                Chars[n] = value;
+            }
+        }
+
+        private char[] Chars
         {
             get
             {
@@ -45,7 +53,7 @@ namespace Task4
 
         public static bool operator !=(MyString str1, MyString str2)
         {
-            return !(str1.GetHashCode() == str2.GetHashCode());
+            return !(str1 == str2);
         }
 
         public static bool operator ==(MyString str1, MyString str2)
@@ -55,12 +63,7 @@ namespace Task4
 
         public override int GetHashCode()
         {
-            int hashCode = 0;
-            for (int i = 0; i < this.Chars.Length; i++)
-            {
-                hashCode += this.Chars[i].GetHashCode();
-            }
-            return hashCode;
+            return ToString().GetHashCode();
         }
 
         public override string ToString()
