@@ -17,10 +17,6 @@ namespace Task2
 
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException($"{nameof(X)} cannot be less than zero or equal to zero");
-                }
                 _x = value;
             }
         }
@@ -34,10 +30,6 @@ namespace Task2
 
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException($"{nameof(Y)} cannot be less than zero or equal to zero");
-                }
                 _y = value;
             }
         }

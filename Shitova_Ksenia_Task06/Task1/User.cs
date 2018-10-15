@@ -8,7 +8,6 @@ namespace Task1
         private string _name;
         private string _middleName;
         private DateTime _birthDate;
-        private int _age;
 
         public string Surname
         {
@@ -18,7 +17,7 @@ namespace Task1
             }
             set
             {
-                if (value == null)
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException($"{nameof(Surname)} cannot be null");
                 }
@@ -34,7 +33,7 @@ namespace Task1
             }
             set
             {
-                if (value == null)
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException($"{nameof(Name)} cannot be null");
                 }
@@ -63,7 +62,7 @@ namespace Task1
 
             set
             {
-                if (value == null || !(value > new DateTime(1950, 1, 1) && value < DateTime.Now))
+                if (value == null || value < new DateTime(1950, 1, 1) && value > DateTime.Now)
                 {
                     throw new ArgumentException($"{nameof(BirthDate)} cannot be null or less than {new DateTime(1950, 1, 1)} and more than {DateTime.Now}");
                 }

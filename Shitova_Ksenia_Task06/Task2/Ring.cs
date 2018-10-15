@@ -20,6 +20,38 @@ namespace Task2
             }
         }
 
+        public double X
+        {
+            get
+            {
+                return _roundIn.X;
+            }
+        }
+
+        public double Y
+        {
+            get
+            {
+                return _roundIn.Y;
+            }
+        }
+
+        public double RadiusIn
+        {
+            get
+            {
+                return _roundIn.Radius;
+            }
+        }
+
+        public double RadiusOut
+        {
+            get
+            {
+                return _roundOut.Radius;
+            }
+        }
+
         public double RingSquare
         {
             get { return _roundOut.RoundSquare - _roundIn.RoundSquare; }
@@ -32,7 +64,7 @@ namespace Task2
 
         public override string ToString()
         {
-            return $"X = {_roundIn.X}, Y = {_roundIn.Y}, Radius in = {_roundIn.Radius}, Radius out = {_roundOut.Radius}";
+            return $"X = {X}, Y = {Y}, Radius in = {RadiusIn}, Radius out = {RadiusOut}";
         }
     }
 }

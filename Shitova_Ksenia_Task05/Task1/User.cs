@@ -62,7 +62,7 @@ namespace Task1
 
             set
             {
-                if (value == null || value < new DateTime(1950, 1, 1) && value > DateTime.Now))
+                if (value == null || value < new DateTime(1950, 1, 1) && value > DateTime.Now)
                 {
                     throw new ArgumentException($"{nameof(BirthDate)} cannot be null or less than {new DateTime(1950, 1, 1)} and more than {DateTime.Now}");
                 }

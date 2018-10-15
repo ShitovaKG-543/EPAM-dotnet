@@ -17,10 +17,6 @@ namespace Task2
 
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException($"{nameof(X)} cannot be less than zero or equal to zero");
-                }
                 _x = value;
             }
         }
@@ -34,10 +30,6 @@ namespace Task2
 
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException($"{nameof(Y)} cannot be less than zero or equal to zero");
-                }
                 _y = value;
             }
         }
@@ -75,17 +67,6 @@ namespace Task2
         {
             get { return Math.PI * Math.Pow(Radius, 2); }
         }
-
-
-        //public double GetRoundLength()
-        //{
-        //    return 2 * Math.PI * Radius;
-        //}
-
-        //public double GetRoundSquare()
-        //{
-        //    return Math.PI * Math.Pow(Radius, 2);
-        //}
 
         public override string ToString()
         {
