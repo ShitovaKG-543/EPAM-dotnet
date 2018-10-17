@@ -15,9 +15,9 @@ namespace Task1
             }
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
-                    throw new ArgumentException($"{nameof(WorkExperience)} cannot be less than zero or equal to zero");
+                    throw new ArgumentException($"{nameof(WorkExperience)} cannot be less than zero");
                 }
                 _workExperience = value;
             }
@@ -31,7 +31,7 @@ namespace Task1
             }
             set
             {
-                if (value == null)
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException($"{nameof(Position)} cannot be null");
                 }
@@ -39,7 +39,13 @@ namespace Task1
             }
         }
 
-        public Employee(string surname, string name, string middleName, DateTime birthDate, int workExperience, string position) : base(surname, name, middleName, birthDate)
+        public Employee(
+            string surname,
+            string name,
+            string middleName,
+            DateTime birthDate,
+            int workExperience,
+            string position) : base(surname, name, middleName, birthDate)
         {
             WorkExperience = workExperience;
             Position = position;

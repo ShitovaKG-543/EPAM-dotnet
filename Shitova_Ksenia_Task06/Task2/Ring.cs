@@ -2,27 +2,12 @@
 
 namespace Task2
 {
-    public class Ring: Round
+    public class Ring
     {
-        private double _radiusIn;
+        private Round _roundIn;
+        private Round _roundOut;
 
-        public double RadiusIn
-        {
-            get
-            {
-                return _radiusIn;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException($"{nameof(RadiusIn)} cannot be less than zero or equal to zero");
-                }
-                _radiusIn = value;
-            }
-        }
-
-        public Ring(double x, double y, double radiusOut, double radiusIn) : base(x, y, radiusOut)
+        public Ring(double x, double y, double radiusIn, double radiusOut)
         {
             if (radiusIn > radiusOut)
             {
@@ -30,23 +15,50 @@ namespace Task2
             }
             else
             {
-                RadiusIn = radiusIn;
+                _roundIn = new Round(x, y, radiusIn);
+                _roundOut = new Round(x, y, radiusOut);
             }
         }
+
+        public double X
+        {
+            get
+            {
+                return _roundIn.X;
+            }
+        }
+
+        public double Y
+        {
+            get
+            {
+                return _roundIn.Y;
+            }
+        }
+
+        public double RadiusIn
+        {
+            get
+            {
+                return _roundIn.Radius;
+            }
+        }
+
+        public double RadiusOut
+        {
+            get
+            {
+                return _roundOut.Radius;
+            }
+        }
+
+        public double RingSquare => _roundOut.RoundSquare - _roundIn.RoundSquare;
+
+        public double RingLength => _roundIn.RoundLength + _roundOut.RoundLength;
         
-        public double RingSquare
-        {
-            get { return base.RoundSquare - Math.PI * Math.Pow(RadiusIn, 2); }
-        }
-
-        public double RingLength
-        {
-            get { return base.RoundLength + 2 * Math.PI * RadiusIn; }
-        }
-
         public override string ToString()
         {
-            return $"X = {X}, Y = {Y}, Radius in = {RadiusIn}, Radius out = {Radius}";
+            return $"X = {X}, Y = {Y}, Radius in = {RadiusIn}, Radius out = {RadiusOut}";
         }
     }
 }
