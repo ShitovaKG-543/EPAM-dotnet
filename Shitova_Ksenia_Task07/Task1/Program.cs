@@ -14,7 +14,8 @@ namespace Task1
                 canvas.AddFigure(new Rectangle(12, 2, 43, 77));
                 canvas.AddFigure(new Ring(4, 11, 5, 7));
 
-                Console.WriteLine(canvas.DrawAll());
+                IPrinter printer = new Printer();
+                canvas.DrawAll(printer);
             }
             catch (ArgumentException e)
             {

@@ -31,9 +31,9 @@ namespace Task1
 
         public double Length => Math.Sqrt(Math.Pow(Math.Abs(X2 - X), 2) + Math.Pow(Math.Abs(Y2 - Y), 2));
         
-        public override string Draw()
-        {
-            return $"{base.Draw()}, X2 = {X2}, Y2 = {Y2}";
-        }
+        //public override string Draw()
+        //{
+        //    return $"{base.Draw()}, X2 = {X2}, Y2 = {Y2}";
+        //}
     }
 }

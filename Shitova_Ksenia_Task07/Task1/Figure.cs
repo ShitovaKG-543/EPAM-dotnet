@@ -28,9 +28,14 @@ namespace Task1
             _y = y;
         }
 
-        public virtual string Draw()
+        public void Draw(IPrinter printer)
         {
-            return $"Тип фигуры: {GetType().Name}, координаты X = {X}, Y = {Y}";
+            printer.Print(X, Y);
         }
+
+        //public virtual string Draw()
+        //{
+        //    return $"Тип фигуры: {GetType().Name}, координаты X = {X}, Y = {Y}";
+        //}
     }
 }

@@ -32,9 +32,9 @@ namespace Task1
         
         public double RoundSquare => Math.PI * Math.Pow(Radius, 2);
        
-        public override string Draw()
-        {
-            return $"{base.Draw()}, Radius = {Radius}";
-        }
+        //public override string Draw()
+        //{
+        //    return $"{base.Draw()}, Radius = {Radius}";
+        //}
     }
 }

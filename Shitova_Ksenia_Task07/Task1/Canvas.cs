@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Task1
@@ -16,15 +17,16 @@ namespace Task1
         {
             _figures.Add(figure);
         }
-
-        public string DrawAll()
+        
+        public void DrawAll(IPrinter printer)
         {
             StringBuilder result = new StringBuilder();
             foreach (Figure figure in _figures)
             {
-                result.Append($"{figure.Draw()}\r\n");
+                figure.Draw(printer);
             }
-            return result.ToString();
         }
+
+        
     }
 }

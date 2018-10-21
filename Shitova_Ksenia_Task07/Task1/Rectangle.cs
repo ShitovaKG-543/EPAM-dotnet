@@ -47,9 +47,9 @@ namespace Task1
             Width = width;
         }
 
-        public override string Draw()
-        {
-            return $"{base.Draw()}, Length = {Length}, Width = {Width}";
-        }
+        //public override string Draw()
+        //{
+        //    return $"{base.Draw()}, Length = {Length}, Width = {Width}";
+        //}
     }
 }

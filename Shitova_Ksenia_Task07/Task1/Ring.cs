@@ -40,9 +40,9 @@ namespace Task1
 
         public double RingLength => _roundIn.RoundLength + _roundOut.RoundLength;
 
-        public override string Draw()
-        {
-            return $"{base.Draw()}, Radius in = {RadiusIn}, Radius out = {RadiusOut}";
-        }
+        //public override string Draw()
+        //{
+        //    return $"{base.Draw()}, Radius in = {RadiusIn}, Radius out = {RadiusOut}";
+        //}
     }
 }
