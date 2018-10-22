@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace Task1
+namespace Task2
 {
-    public class DynamicArray<T> where T: new()
+    public class DynamicArray<T>: IEnumerable<T> where T : new()
     {
         private T[] _array;
         private int _size = 0;
@@ -79,6 +82,18 @@ namespace Task1
             _array = new T[items.Length];
             Array.Copy(items, _array, items.Length);
             _size = items.Length;
+        }
+
+        ////// 
+        public DynamicArray(IEnumerable<T> collection)
+        {
+            if (collection == null)
+            {
+                throw new ArgumentException("Collection cannot be null");
+            }
+
+            _array = collection.ToArray();
+            _size = collection.Count();
         }
 
         public virtual void Add(T value)
@@ -172,12 +187,24 @@ namespace Task1
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();
-            for (int i = 0; i < Length; i++)
+            foreach (var el in this)
             {
-                result.Append($"{_array[i]} ");
+                result.Append($"{el} ");
             }
-
             return result.ToString();
+        }
+
+        ////////////
+        public IEnumerator<T> GetEnumerator()
+        {
+            T[] newArray = new T[Length];
+            Array.Copy(_array, newArray, Length);
+            return ((IEnumerable<T>)newArray).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable<T>)_array).GetEnumerator();
         }
     }
 }
