@@ -93,7 +93,7 @@ namespace Task2
             }
 
             _array = collection.ToArray();
-            _size = collection.Count();
+            _size = _array.Length;
         }
 
         public virtual void Add(T value)
