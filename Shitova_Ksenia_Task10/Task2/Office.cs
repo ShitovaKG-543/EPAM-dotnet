@@ -24,7 +24,6 @@ namespace Task2
             Console.WriteLine($"[{person.Name} went home]");
             foreach (var pers in _persons)
             {
-                person.Came -= pers.SayHi;
                 person.WalkedAway += pers.SayBye;
             }
             person.OnWalkAway();

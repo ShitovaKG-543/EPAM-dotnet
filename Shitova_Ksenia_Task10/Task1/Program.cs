@@ -6,25 +6,25 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            MyStringArray myStringArray = new MyStringArray();
-            myStringArray.Add("dsfsf");
-            myStringArray.Add("rsa");
-            myStringArray.Add("kjs");
-            myStringArray.Add("g");
-            myStringArray.Add("tersses");
+            MyStringArray myStringsArray = new MyStringArray();
+            myStringsArray.Add("dsfsf");
+            myStringsArray.Add("rsa");
+            myStringsArray.Add("kjs");
+            myStringsArray.Add("g");
+            myStringsArray.Add("tersses");
 
             Console.WriteLine("Initial strings array:");
-            for (int i = 0; i < myStringArray.Length; i++)
+            for (int i = 0; i < myStringsArray.Length; i++)
             {
-                Console.WriteLine(myStringArray[i]);
+                Console.WriteLine(myStringsArray[i]);
             }
             Console.WriteLine();
 
             Console.WriteLine("Resulting strings array:");
-            myStringArray.Sort(MyStringArray.AscendingComparer);
-            for (int i = 0; i < myStringArray.Length; i++)
+            myStringsArray.Sort(MyStringArray.AscendingComparer);
+            for (int i = 0; i < myStringsArray.Length; i++)
             {
-                Console.WriteLine(myStringArray[i]);
+                Console.WriteLine(myStringsArray[i]);
             }
             Console.ReadLine();
         }

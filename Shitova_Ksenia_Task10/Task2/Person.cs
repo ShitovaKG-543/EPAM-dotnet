@@ -2,13 +2,11 @@
 
 namespace Task2
 {
-    class Person
+    public delegate void PersonDelegateCame(Person person, DateTime time);
+    public delegate void PersonDelegateWalkedAway(Person person);
+    public class Person
     {
-
-        public delegate void PersonDelegateCame(Person person, DateTime time);
-        public event PersonDelegateCame Came;
-
-        public delegate void PersonDelegateWalkedAway(Person person);
+        public event PersonDelegateCame Came; 
         public event PersonDelegateWalkedAway WalkedAway;
 
 
@@ -33,7 +31,6 @@ namespace Task2
             {
                 Console.WriteLine($"Good day, {person.Name}!, - said {this.Name}.");
             }
-
         }
 
         public void SayBye(Person person)

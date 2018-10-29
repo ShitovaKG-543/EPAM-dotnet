@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2
 {
     class Program
     {
-        //public delegate void Message(string text);
-        //public delegate void PersonDelegate(Person person, DateTime time);
-
         static void Main(string[] args)
         {
             Office o = new Office();
@@ -19,6 +12,7 @@ namespace Task2
             Person p3 = new Person("Kate");
             Person p4 = new Person("Georgy");
             Person p5 = new Person("Garry");
+
             o.Add(p1);
             Console.WriteLine();
             o.Add(p2);
