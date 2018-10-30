@@ -12,6 +12,8 @@ namespace Task2
             Console.WriteLine($"[{person.Name} came to work]");
             foreach (var pers in _persons)
             {
+                person.WalkedAway += pers.SayBye;
+                pers.WalkedAway += person.SayBye;
                 person.Came += pers.SayHi;
             }
             person.OnCome();
@@ -22,11 +24,13 @@ namespace Task2
         {
             _persons.Remove(person);
             Console.WriteLine($"[{person.Name} went home]");
+            person.OnWalkAway();
             foreach (var pers in _persons)
             {
-                person.WalkedAway += pers.SayBye;
+                person.Came -= pers.SayHi;
+                person.WalkedAway -= pers.SayBye;
+                pers.WalkedAway -= person.SayBye;
             }
-            person.OnWalkAway();
         }
     }
 }

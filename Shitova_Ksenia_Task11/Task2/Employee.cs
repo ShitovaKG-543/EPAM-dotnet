@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task1
+namespace Task2
 {
     public class Employee : User, IEquatable<Employee>
     {
@@ -59,6 +59,10 @@ namespace Task1
         ////////
         public bool Equals(Employee other)
         {
+            if (other == null)
+            {
+                throw new Exception("employee can not be null");
+            }
             return Surname.Equals(other.Surname) &&
                 Name.Equals(other.Name) &&
                 MiddleName.Equals(other.MiddleName) &&

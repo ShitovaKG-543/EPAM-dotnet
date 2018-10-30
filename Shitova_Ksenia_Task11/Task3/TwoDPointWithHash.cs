@@ -15,9 +15,9 @@
 
         public override int GetHashCode()
         {
-            int hash = 17;
-            hash = hash * 3 + x;
-            hash = hash * 3 + y;
+            int hash = 23;
+            hash = hash * 17 + x;
+            hash = hash * 17 + y;
             return hash;
         }
     }

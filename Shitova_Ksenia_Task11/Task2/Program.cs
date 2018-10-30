@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2
 {
@@ -10,6 +6,16 @@ namespace Task2
     {
         static void Main(string[] args)
         {
+            Employee empl = new Employee("sdad","sdf","ds",new DateTime(2018,4,21), 3, "khk");
+            try
+            {
+                Console.WriteLine(empl.Equals(null));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.ReadLine();
         }
     }
 }

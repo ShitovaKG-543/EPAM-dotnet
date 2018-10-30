@@ -27,11 +27,12 @@ namespace Task2
             Console.WriteLine();
             o.Remove(p3);
             Console.WriteLine();
+            o.Remove(p4);
+            Console.WriteLine();
             o.Remove(p1);
             Console.WriteLine();
             o.Remove(p2);
-            Console.WriteLine();
-            o.Remove(p4);
+            
             Console.WriteLine();
             o.Remove(p5);
 

@@ -1,17 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Task3
 {
     class Program
     {
-        static Random random = new Random();
+        static Random rand = new Random();
         static void Main(string[] args)
         {
-            TwoDPointWithHash newPoint1 = new TwoDPointWithHash(1, 1);
-            TwoDPointWithHash newPoint2 = new TwoDPointWithHash(10, 10);
+            int n = 1000000;
+            
+            Dictionary<TwoDPointWithHash, int> dict = new Dictionary<TwoDPointWithHash, int>();
 
-            Console.WriteLine("Hash for point1: {0}\tHash for point2: {1}", newPoint1.GetHashCode(), newPoint2.GetHashCode());
+            for (int i = 0; i < n; i++)
+            {
+                TwoDPointWithHash point = new TwoDPointWithHash(rand.Next(-1000000, 1000000), rand.Next(-1000000, 1000000));
+                if (!dict.ContainsKey(point))
+                {
+                    dict.Add(point, point.GetHashCode());
+                }
+            }
 
+            var distinct = dict.Values.Distinct();
+            
+
+            Console.WriteLine($"The same: {dict.Count - distinct.Count()}, hashes all: {dict.Count}, percent: {(double)(dict.Count - distinct.Count()) * 100.0 /(double)dict.Count}");
+           
             Console.ReadLine();
         }
     }

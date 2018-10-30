@@ -39,6 +39,16 @@ namespace Task1
             return s1.Length == s2.Length;
         }
 
+        public static bool LengthComparer(string str1, string str2)
+        {
+            return str1.Length > str2.Length;
+        }
+
+        public static bool AlphabetComparer(string str1, string str2)
+        {
+            return str1.CompareTo(str2) == 1;
+        }
+
         public static bool AscendingComparer(string str1, string str2)
         {
             if (CompareStringLength(str1, str2))
@@ -49,16 +59,6 @@ namespace Task1
             {
                 return LengthComparer(str1, str2);
             }
-        }
-
-        public static bool LengthComparer(string str1, string str2)
-        {
-            return str1.Length > str2.Length;
-        }
-
-        public static bool AlphabetComparer(string str1, string str2)
-        {
-            return str1.CompareTo(str2) == 1;
         }
 
         public void Sort(Func<string, string, bool> methodSort)
